@@ -1,9 +1,9 @@
-import React from 'react'
-import CartItem from './CartItem'
-import { useGlobalContext } from './context'
+import React from 'react';
+import CartItem from './CartItem';
+import { useGlobalContext } from './context';
 
 const CartContainer = () => {
-  const { cart } = useGlobalContext()
+  const { cart, total } = useGlobalContext()
   if (cart.length === 0) {
     return (
       <section className='cart'>
@@ -14,7 +14,7 @@ const CartContainer = () => {
         </header>
       </section>
     )
-  }
+  };
   return (
     <section className='cart'>
       {/* cart header */}
@@ -32,7 +32,7 @@ const CartContainer = () => {
         <hr />
         <div className='cart-total'>
           <h4>
-            total <span>$0.00</span>
+            total <span>${total}</span>
           </h4>
         </div>
         <button
@@ -44,6 +44,6 @@ const CartContainer = () => {
       </footer>
     </section>
   )
-}
+};
 
-export default CartContainer
+export default CartContainer;
