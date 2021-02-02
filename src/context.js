@@ -39,7 +39,7 @@ const AppProvider = ({ children }) => {
     dispatch({type: 'LOADING'});
     const response = await fetch(url);
     const cart = await response.json();
-    dispatch({type: 'DISPLAY_ITEM', payload: cart});
+    dispatch({type: 'DISPLAY_ITEMS', payload: cart});
   };
 
   useEffect(() => {
